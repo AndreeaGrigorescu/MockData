@@ -15,15 +15,22 @@ Assumptions implemented:
   
 Columns included:
   	a. First Name
-		b. Last Name
-		c. Employee_ID
-		d. Hire date
-		e. Date of Birth (DoB)
-		f. Education
-		g. Position - renamed to Job Title
-		h. Norm
-    i. Department
- 
+	b. Last Name
+	c. Employee_ID
+	d. Hire date
+	e. Date of Birth (DoB)
+	f. Education
+	g. Position - renamed to Job Title
+	h. Norm
+    	i. Department
+
+# 2. User file
+
+Based on the HR Dataset with the following adjustments:
+	a. Removed the education and Date of Birth columns.
+	b. Added UserName column - unique values.
+	c. Added Phone login - unique values
+	
 # Source:
   
   Inspiration for the project and specific code elements was given by Keith Galli:
