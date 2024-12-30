@@ -30,7 +30,26 @@ Based on the HR Dataset with the following adjustments:
 	a. Removed the education and Date of Birth columns.
 	b. Added UserName column - unique values.
 	c. Added Phone login - unique values
-	
+
+
+# 3 Calls database
+
+Contains the following columns:
+	a. Date
+	b. Time_Received
+	c. Answer time (seconds)
+	d. Hold time (seconds)
+	e. Duration (minutes)
+	f. Agent
+
+Assumptions that were implemented:
+	1. Agent utilization of 82%
+	2. Norm specific daily break durations
+	3. Specific department AHT
+
+For each agent establishes the timeframe worked: either leave date or the end of the year of the maximum GoLive dates.
+Iterates through each day and each agent to generates calls with random hold and answer times, both as per a specifically set interval as well as the calls until we reach maximum utilization for that specific agent.
+
 # Source:
   
   Inspiration for the project and specific code elements was given by Keith Galli:
