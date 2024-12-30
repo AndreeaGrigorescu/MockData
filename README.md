@@ -13,16 +13,16 @@ Assumptions implemented:
   All support staff has higher education (Undergraduate or Graduate);  
   Employee IDs are unique and corelated with the Hire date.  
   
-Columns included:
-  	* First Name \
+Columns included:  
+  	+ First Name \
 	* Last Name \
-	* Employee_ID \
+	- Employee_ID \
 	* Hire date \
-	* Date of Birth (DoB) \
+	+ Date of Birth (DoB) \
 	* Education \
-	* Position - renamed to Job Title \
+	- Position - renamed to Job Title \
 	* Norm \
-    	* Department \
+    	+ Department 
 
 # 2. User file
 
