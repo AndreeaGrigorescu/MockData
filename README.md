@@ -7,22 +7,22 @@ This project was created to solve this problem by generating mock data that enco
 # 1. HR Data
 
 Assumptions implemented:
-  5000 employees in total, out of which a maximum of 10% support staff;
-  A maximum of 9% staff turnover with a random number of days worked;
-  All support staff works full time;
-  All support staff has higher education (Undergraduate or Graduate);
-  Employee IDs are unique and corelated with the Hire date.
+  5000 employees in total, out of which a maximum of 10% support staff;  
+  A maximum of 9% staff turnover with a random number of days worked;  
+  All support staff works full time;  
+  All support staff has higher education (Undergraduate or Graduate);  
+  Employee IDs are unique and corelated with the Hire date.  
   
 Columns included:
-  	a. First Name
-	b. Last Name
-	c. Employee_ID
-	d. Hire date
-	e. Date of Birth (DoB)
-	f. Education
-	g. Position - renamed to Job Title
-	h. Norm
-    	i. Department
+  	* First Name \
+	* Last Name \
+	* Employee_ID \
+	* Hire date \
+	* Date of Birth (DoB) \
+	* Education \
+	* Position - renamed to Job Title \
+	* Norm \
+    	* Department \
 
 # 2. User file
 
