@@ -14,37 +14,37 @@ Assumptions implemented:
   Employee IDs are unique and corelated with the Hire date.  
   
 Columns included:  
-  	+ First Name \
-	* Last Name \
-	- Employee_ID \
-	* Hire date \
-	+ Date of Birth (DoB) \
-	* Education \
-	- Position - renamed to Job Title \
-	* Norm \
-    	+ Department 
+  	1. First Name  
+	2. Last Name  
+	3. Employee_ID  
+	4. Hire date  
+	5. Date of Birth (DoB)  
+	6. Education \
+	7. Position - renamed to Job Title  
+	8. Norm  
+    	9. Department 
 
 # 2. User file
 
-Based on the HR Dataset with the following adjustments:
-	a. Removed the education and Date of Birth columns.
-	b. Added UserName column - unique values.
-	c. Added Phone login - unique values
+Based on the HR Dataset with the following adjustments:  
+	1. Removed the education and Date of Birth columns.  
+	2. Added UserName column - unique values.  
+	3. Added Phone login - unique values  
 
 
 # 3 Calls database
 
-Contains the following columns:
-	a. Date
-	b. Time_Received
-	c. Answer time (seconds)
-	d. Hold time (seconds)
-	e. Duration (minutes)
-	f. Agent
+Contains the following columns:  
+	1. Date  
+	2. Time_Received  
+	3. Answer time (seconds)  
+	4. Hold time (seconds)  
+	5. Duration (minutes)  
+	6. Agent
 
-Assumptions that were implemented:
-	1. Agent utilization of 82%
-	2. Norm specific daily break durations
+Assumptions that were implemented:  
+	1. Agent utilization of 82%  
+	2. Norm specific daily break durations  
 	3. Specific department AHT
 
 For each agent establishes the timeframe worked: either leave date or the end of the year of the maximum GoLive dates.
