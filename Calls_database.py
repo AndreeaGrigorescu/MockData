@@ -5,10 +5,11 @@ Created on Tue Sep 22 20:35:28 2020
 @author: Andreea
 """
 
-import pandas as pd
-import numpy as np
 import datetime as dt
 import random
+
+import numpy as np
+import pandas as pd
 
 
 def dates_active(start_date, end_date):
@@ -49,10 +50,10 @@ def generate_random_time():
 
     try:
         final_time = (dt.datetime.combine(base_date, time_rand) + delta).time()
-        return final_time.strftime("%H:%M")
+        return final_time
     except OverflowError:
         # Handle rare edge case where delta creates an invalid time
-        return time_rand.strftime("%H:%M")
+        return time_rand
 
 
 def next_time(prev_time, prev_call_time, min_offset, break_time_minutes):
@@ -65,11 +66,18 @@ def next_time(prev_time, prev_call_time, min_offset, break_time_minutes):
     minutes_to_sec = (break_time_minutes * 60) + (prev_call_time * 60)
     random_offset = random.uniform(min_offset, minutes_to_sec)
     delta = dt.timedelta(seconds=random_offset)
-    time_obj = (dt.datetime.strptime(prev_time, "%H:%M")).time()
+
+    # Ensure prev_time is a datetime.time object
+    if isinstance(prev_time, str):
+        time_obj = dt.datetime.strptime(prev_time, "%H:%M").time()
+    elif isinstance(prev_time, dt.time):
+        time_obj = prev_time
+    else:
+        raise ValueError("prev_time must be a string in '%H:%M' format or a datetime.time object")
 
     final_time = (dt.datetime.combine(
         dt.date(1, 1, 1), time_obj) + delta).time()
-    return final_time.strftime("%H:%M")
+    return final_time
 
 
 def answer_time(min_answer, max_answer):
@@ -138,7 +146,7 @@ aht_dept = {
 }
 
 # Columns to be generated & list creation
-columns = ["Date", "Time_Received", "Answer time (seconds)",
+columns = ["Date", "DateTime_Received", "Answer time (seconds)",
            "Hold time (seconds)", "Duration (minutes)", "Agent"]
 
 data = []
@@ -186,7 +194,7 @@ for ind in agents.index:
                 time = next_time(first_call, duration, 5, max_break_time)
             else:
                 time = next_time(time, duration, 5, max_break_time)
-            data.append([date, time, answ_time, h_time, duration, user])
+            data.append([date, pd.Timestamp.combine(date, time), answ_time, h_time, duration, user])
 
 df = pd.DataFrame(data, columns=columns)
 df.sort_values(by='Date')
